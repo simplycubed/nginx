@@ -2,7 +2,7 @@ steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
       - "build"
-      - "--tag=asia.gcr.io/$PROJECT_ID/nginx:latest"
+      - "--tag=gcr.io/$PROJECT_ID/nginx:latest"
       - "--file=Dockerfile"
       - "."
     waitFor: ["-"]
@@ -10,7 +10,7 @@ steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
       - "build"
-      - "--tag=asia.gcr.io/$PROJECT_ID/nginx-with-brotli:latest"
+      - "--tag=gcr.io/$PROJECT_ID/nginx-with-brotli:latest"
       - "--build-arg"
       - "ENABLED_MODULES=brotli"
       - "--file=Dockerfile.with-modules"
@@ -18,5 +18,5 @@ steps:
     waitFor: ["-"]
 
 images:
-  - "asia.gcr.io/$PROJECT_ID/nginx:latest"
-  - "asia.gcr.io/$PROJECT_ID/nginx-with-brotli:latest"
+  - "gcr.io/$PROJECT_ID/nginx:latest"
+  - "gcr.io/$PROJECT_ID/nginx-with-brotli:latest"
