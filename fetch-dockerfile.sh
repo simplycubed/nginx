@@ -1,1 +1,0 @@
-curl https://raw.githubusercontent.com/nginxinc/docker-nginx/1.21.3/modules/Dockerfile.alpine -o Dockerfile.with-modules
